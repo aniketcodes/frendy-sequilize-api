@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+            Order Form
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class="row">
+            <div class="container">
+                <h1 class="text-center">
+                    Create A Order
+                </h1>
+                <form action="/view/order/create" method="POST" class="form-group">
+                    <input type="number" class="form-control " name="orderId" placeholder="Order Id" required>
+                    <input type="text" class="form-control" name="orderDesc", placeholder="Order Description" required>
+                    <input type="date" class="form-control" name="orderDate" placeholder="Select Delivery Date" required>
+
+                    <select name="orderCity" class='form-control' required>
+                        <option value="null" disabled selected>Select Order city</option>
+                        <% for (city of cities){%>
+                        <option class="form-control" value="<%=city.name%>"><%=city.name%></option>
+                            <%}%>
+
+                    </select>
+                    <select name="orderSlot" class="form-control" required>
+                        <option value="null" disabled selected>Select Delivery Slot</option>
+                        <option value="before10">Before 10:00 AM</option>
+                        <option value="after10">After 10:00 AM</option>
+                    </select>
+
+                    <input type="submit" class="form-control btn-primary">
+
+                        
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
