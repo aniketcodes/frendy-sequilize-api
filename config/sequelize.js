@@ -2,6 +2,7 @@ const Sequelize=require("sequelize");
 const ReviewModel=require("../models/Reviews");
 const CityModel=require("../models/Cities");
 const OrderModel=require("../models/Orders");
+const CityWithDayModel=require("../models/CitiesWithDays");
 
 const {DATABASE_NAME,USERNAME,ROOT,PASSWORD,HOST,DIALECT}=require("./constants");
 const sequelize = new Sequelize(DATABASE_NAME,ROOT,PASSWORD,{
@@ -18,6 +19,7 @@ const sequelize = new Sequelize(DATABASE_NAME,ROOT,PASSWORD,{
 const Review=ReviewModel(sequelize,Sequelize);
 const City=CityModel(sequelize,Sequelize);
 const Order=OrderModel(sequelize,Sequelize);
+const CityWithDay=CityWithDayModel(sequelize,Sequelize);
 
 sequelize.sync({ force: false })
 .then(() => {
@@ -26,5 +28,6 @@ console.log(`Database & tables created here!`)
 module.exports = {
     Review,
     City,
-    Order
+    Order,
+    CityWithDay
 } 

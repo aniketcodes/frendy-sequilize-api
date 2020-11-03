@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2020 at 03:46 PM
+-- Generation Time: Nov 03, 2020 at 05:48 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -44,6 +44,37 @@ INSERT INTO `cities` (`id`, `name`, `createdAt`, `updatedAt`) VALUES
 (4, 'Delhi', '2020-11-02 09:20:54', '2020-11-02 09:20:54'),
 (5, 'Lucknow', '2020-11-02 09:21:01', '2020-11-02 09:21:01'),
 (6, 'Kanpur', '2020-11-02 09:27:26', '2020-11-02 09:27:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `citieswithdays`
+--
+
+CREATE TABLE `citieswithdays` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `days` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`days`)),
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `citieswithdays`
+--
+
+INSERT INTO `citieswithdays` (`id`, `name`, `days`, `createdAt`, `updatedAt`) VALUES
+(8, 'Ahmedabad', '[0,0,1,0,1,0,1]', '2020-11-03 02:36:19', '2020-11-03 02:36:19'),
+(9, 'Gandhinagar', '[0,1,0,1,0,1,0]', '2020-11-03 02:36:33', '2020-11-03 02:36:33'),
+(10, 'Dehgam', '[0,1,1,1,1,1,0]', '2020-11-03 02:36:51', '2020-11-03 02:36:51'),
+(11, 'Kalol', '[0,1,0,0,0,1,0]', '2020-11-03 02:37:02', '2020-11-03 02:37:02'),
+(12, 'Sanad', '[0,1,0,1,0,1,0]', '2020-11-03 02:37:17', '2020-11-03 02:37:17'),
+(13, 'Vadodara', '[0,0,1,0,0,0,1]', '2020-11-03 02:37:26', '2020-11-03 02:37:26'),
+(14, 'Mahemedabad', '[0,0,1,0,0,0,1]', '2020-11-03 02:37:40', '2020-11-03 02:37:40'),
+(15, 'Nadiad', '[0,0,1,0,0,0,1]', '2020-11-03 02:37:51', '2020-11-03 02:37:51'),
+(16, 'Anand', '[0,0,1,0,0,0,1]', '2020-11-03 02:38:01', '2020-11-03 02:38:01'),
+(17, 'Palanpur', '[0,0,1,0,0,0,1]', '2020-11-03 02:38:13', '2020-11-03 02:38:13'),
+(18, 'Mehsana', '[0,0,1,0,0,0,1]', '2020-11-03 02:38:23', '2020-11-03 02:38:23');
 
 -- --------------------------------------------------------
 
@@ -109,6 +140,12 @@ ALTER TABLE `cities`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `citieswithdays`
+--
+ALTER TABLE `citieswithdays`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
@@ -129,6 +166,12 @@ ALTER TABLE `reviews`
 --
 ALTER TABLE `cities`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `citieswithdays`
+--
+ALTER TABLE `citieswithdays`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `orders`

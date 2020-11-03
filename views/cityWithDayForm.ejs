@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Add City With Delivery Day</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        <div class="row">
+            <div class="container">
+                <h1 class="text-center">Admin can add cities</h1>
+                <form action="/view/citywithday/create" method="POST" class="form-group text-center">
+                <input type="text" name="city" placeholder="city" class="form-control">
+                <label for="weekdays" class="text-left">Select Days When Products Can be Delivered</label><br>
+                <div class="row">
+                    <div class="form-group col-md-10">
+                        <input type="checkbox" name="weekdays" value="Sunday">
+                        <label>Sunday</label>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <input type="checkbox" name="weekdays" value="Monday">
+                        <label>Monday</label>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <input type="checkbox" name="weekdays" value="Tuesday">
+                        <label>Tuesday</label>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <input type="checkbox" name="weekdays" value="Wednesday">
+                        <label>Wednesday</label>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <input type="checkbox" name="weekdays" value="Thursday">
+                        <label>Thursday</label>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <input type="checkbox" name="weekdays" value="Friday">
+                        <label>Friday</label>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <input type="checkbox" name="weekdays" value="Saturday">
+                        <label>Saturday</label>
+                    </div>
+
+                </div>
+
+                <input type="submit" class="form-control btn-primary">
+                
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

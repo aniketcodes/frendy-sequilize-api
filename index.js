@@ -1,9 +1,11 @@
 const express=require("express");
 const bodyParser=require("body-parser");
 const {Review}=require("./config/sequelize");
+const cors=require("cors");
 const port=8000;
 const app=express();
 
+app.use(cors());
 app.use(express.urlencoded());
 app.use(bodyParser.json());
 app.use("/",require("./routes"));
